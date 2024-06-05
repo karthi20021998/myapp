@@ -1,6 +1,5 @@
 import "./index.css";
-import { IoMdSearch } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 
 import BooksCard from "../BooksCard";
@@ -35,12 +34,13 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    fetchBooksApi();
+    // eslint-disable-next-line
+  }, [searchInput]);
+
   const onChangeUserInput = (event) => {
     setSearchInput(event.target.value);
-  };
-
-  const onClickSearchBook = () => {
-    fetchBooksApi();
   };
 
   const renderEmptyView = () => (
@@ -79,7 +79,7 @@ const Home = () => {
       case "SUCCESS":
         return renderBooks();
       default:
-        return renderEmptyView();
+        return null;
     }
   };
 
@@ -97,13 +97,10 @@ const Home = () => {
               className="input-box"
               onChange={onChangeUserInput}
             />
-            <button className="search-button" onClick={onClickSearchBook}>
-              <IoMdSearch />
-            </button>
           </div>
         </div>
       </div>
-      {renderSearchResultsView()}
+      {searchInput === "" ? renderEmptyView() : renderSearchResultsView()}
     </>
   );
 };
