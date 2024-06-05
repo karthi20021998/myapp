@@ -1,5 +1,6 @@
 import "./index.css";
-import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -11,13 +12,12 @@ const Home = () => {
     }
   };
 
-  useEffect(() => {
-    fetchBooksApi();
-    //eslint-disable-next-line
-  }, []);
-
   const onChangeUserInput = (event) => {
     setSearchInput(event.target.value);
+  };
+
+  const onClickSearch = () => {
+    fetchBooksApi();
   };
 
   return (
@@ -31,6 +31,9 @@ const Home = () => {
           value={searchInput}
           onChange={onChangeUserInput}
         />
+        <button onClick={onClickSearch}>
+          <FaSearch />
+        </button>
       </div>
     </div>
   );
