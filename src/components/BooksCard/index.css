@@ -30,6 +30,18 @@
   color: #181616;
 }
 
+.add-button {
+  height: 30px;
+  width: 80px;
+  background-color: black;
+  color: #ffffff;
+  align-self: flex-end;
+  margin-top: 30px;
+  margin-right: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .books-items-container {
     height: 200px;
