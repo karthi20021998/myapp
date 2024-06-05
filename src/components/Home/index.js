@@ -22,12 +22,16 @@ const Home = () => {
   const fetchBooksApi = async () => {
     setApiStatus("INPROGRESS");
     const url = `https://openlibrary.org/search.json?q=${searchInput}&limit=10&page=1`;
-    const apiResponse = await fetch(url);
-    if (apiResponse.ok === true) {
-      const data = await apiResponse.json();
-      const newData = getUpdatedData(data);
-      setSearchResponse(newData);
-      setApiStatus("SUCCESS");
+    try {
+      const apiResponse = await fetch(url);
+      if (apiResponse.ok === true) {
+        const data = await apiResponse.json();
+        const newData = getUpdatedData(data);
+        setSearchResponse(newData);
+        setApiStatus("SUCCESS");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -40,8 +44,13 @@ const Home = () => {
   };
 
   const renderEmptyView = () => (
-    <div>
-      <h1>No results</h1>
+    <div className="empty-view-container">
+      <img
+        src="https://res.cloudinary.com/dghnaymwn/image/upload/v1709725205/karthi/9318694_yyqzyt.jpg"
+        alt="noresultimage"
+        className="empty-view-image"
+      />
+      <h1 className="empty-view-text">Type in search bar to find books....</h1>
     </div>
   );
 
@@ -54,7 +63,7 @@ const Home = () => {
   const renderBooks = () => {
     const { books } = searchResponse;
     return (
-      <ul>
+      <ul className="books-container">
         {books &&
           books.map((eachBook) => (
             <BooksCard key={eachBook.id} bookDetails={eachBook} />
@@ -75,22 +84,27 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>Book Library</h1>
-      <div>
-        <label>Search book by name:</label>
-        <input
-          type="search"
-          placeholder="search"
-          value={searchInput}
-          onChange={onChangeUserInput}
-        />
-        <button onClick={onClickSearchBook}>
-          <IoMdSearch />
-        </button>
+    <>
+      <div className="home-container">
+        <h1 className="heading">Book Library</h1>
+        <div className="input-container">
+          <label className="input-label">Search book by name:</label>
+          <div className="input-card">
+            <input
+              type="search"
+              placeholder="search"
+              value={searchInput}
+              className="input-box"
+              onChange={onChangeUserInput}
+            />
+            <button className="search-button" onClick={onClickSearchBook}>
+              <IoMdSearch />
+            </button>
+          </div>
+        </div>
       </div>
       {renderSearchResultsView()}
-    </div>
+    </>
   );
 };
 

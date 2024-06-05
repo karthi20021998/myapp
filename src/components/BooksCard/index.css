@@ -1,0 +1,47 @@
+.books-items-container {
+  height: 150px;
+  width: 220px;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  box-shadow: 2px 3px 2px goldenrod;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-title {
+  font-size: 22px;
+  font-family: "Roboto";
+  font-weight: bold;
+  color: #112358;
+}
+
+.book-rating {
+  font-size: 20px;
+  font-family: "Roboto";
+  color: #696866;
+}
+
+.book-edition {
+  font-size: 18px;
+  font-family: "Roboto";
+  color: #181616;
+}
+
+@media screen and (min-width: 768px) {
+  .books-items-container {
+    height: 200px;
+    width: 270px;
+  }
+  .book-title {
+    font-size: 25px;
+  }
+  .book-rating {
+    font-size: 22px;
+  }
+  .book-edition {
+    font-size: 20px;
+  }
+}
