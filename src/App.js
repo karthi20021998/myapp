@@ -7,8 +7,17 @@ import "./App.css";
 
 import BookContext from "./context/bookcontext";
 
+const getItemsFromLocalStorage = () => {
+  const stringifiedList = localStorage.getItem("booksList");
+  const parsedList = JSON.parse(stringifiedList);
+  if (parsedList === null) {
+    return [];
+  }
+  return parsedList;
+};
+
 const App = () => {
-  const [booksList, setBooksList] = useState([]);
+  const [booksList, setBooksList] = useState(getItemsFromLocalStorage());
 
   const addBooks = (bookDetails) => {
     const bookAlreadyExists = booksList.find(
@@ -23,6 +32,8 @@ const App = () => {
     const filteredBooks = booksList.filter((eachBook) => eachBook.id !== id);
     setBooksList(filteredBooks);
   };
+
+  localStorage.setItem("booksList", JSON.stringify(booksList));
 
   return (
     <BookContext.Provider
