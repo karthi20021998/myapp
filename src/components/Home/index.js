@@ -1,6 +1,7 @@
 import "./index.css";
 import { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 import BooksCard from "../BooksCard";
 
@@ -86,7 +87,12 @@ const Home = () => {
   return (
     <>
       <div className="home-container">
-        <h1 className="heading">Book Library</h1>
+        <div className="heading-card">
+          <h1 className="heading">Book Library</h1>
+          <Link to="/books">
+            <p className="bookshelf-text">My Books</p>
+          </Link>
+        </div>
         <div className="input-container">
           <label className="input-label">Search book by name:</label>
           <div className="input-card">

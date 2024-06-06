@@ -1,0 +1,16 @@
+.shelf-title {
+  font-size: 25px;
+  font-family: "sans-serif";
+  font-weight: 600;
+  font-style: oblique;
+  color: brown;
+  text-align: center;
+  margin: 20px;
+}
+
+.shelf-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

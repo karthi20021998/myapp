@@ -15,6 +15,7 @@
 .input-container {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .input-label {
@@ -79,6 +80,22 @@
   color: grey;
 }
 
+.bookshelf-text {
+  font-size: 22px;
+  font-family: "sans serif";
+  font-weight: bold;
+  color: blueviolet;
+  background-color: bisque;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.heading-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (min-width: 768px) {
   .home-container {
     display: flex;
@@ -107,5 +124,9 @@
   }
   .empty-view-text {
     font-size: 28px;
+  }
+  .bookshelf-text {
+    font-size: 25px;
+    margin-left: 25px;
   }
 }

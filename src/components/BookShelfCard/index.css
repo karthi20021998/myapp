@@ -1,0 +1,38 @@
+.shelf-items-card {
+  list-style-type: none;
+  background-color: black;
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.shelf-items-title {
+  font-size: 25px;
+  font-family: "Roboto";
+  color: #ffffff;
+}
+
+.shelf-items-edition-count {
+  font-size: 20px;
+  font-family: "Roboto";
+  color: #ffffff;
+}
+
+.span-text {
+  color: red;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-icon {
+  color: #ffffff;
+  font-size: 30px;
+}
