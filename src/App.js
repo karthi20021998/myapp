@@ -19,12 +19,17 @@ const App = () => {
     }
   };
 
-  console.log(booksList);
+  const removeBooks = (id) => {
+    const filteredBooks = booksList.filter((eachBook) => eachBook.id !== id);
+    setBooksList(filteredBooks);
+  };
+
   return (
     <BookContext.Provider
       value={{
         booksList,
         addBooks,
+        removeBooks,
       }}
     >
       <Switch>

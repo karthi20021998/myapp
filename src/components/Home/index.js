@@ -89,7 +89,7 @@ const Home = () => {
       <div className="home-container">
         <div className="heading-card">
           <h1 className="heading">Book Library</h1>
-          <Link to="/books">
+          <Link to="/books" className="link-text">
             <p className="bookshelf-text">My Books</p>
           </Link>
         </div>

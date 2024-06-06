@@ -14,3 +14,27 @@
   justify-content: center;
   align-items: center;
 }
+
+.empty-shelf-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.empty-shelf-title {
+  font-size: 28px;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+.empty-shelf-btn {
+  height: 30px;
+  width: 100px;
+  background-color: #bb0a6b;
+  color: rgb(4, 4, 252);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
